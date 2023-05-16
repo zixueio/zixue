@@ -1,12 +1,13 @@
 import schedule,time,os
-
-
-def job(path):
+def job():
+    path = os.getcwd()
+    tranvese_folder(path)
+def tranvese_folder(path):
     for file in os.listdir(path):
         abs_path = os.path.join(path,file)
         if os.path.isdir(abs_path):
             print("dir: ",abs_path)
-            job(abs_path)
+            tranvese_folder(abs_path)
         else:
             print("file: ",abs_path)
 
