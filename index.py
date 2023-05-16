@@ -1,6 +1,12 @@
-import schedule,time
+import schedule,time,os
 def job():
-    print("I am working")
+    breakpoint()
+
+def tranvese_folder(path):
+    for file in os.listdir(path):
+        abs_path = os.path.join(path,file)
+        
+
 schedule.every(0.1).minutes.do(job)
 while True:
     schedule.run_pending()
