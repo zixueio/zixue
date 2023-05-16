@@ -5,7 +5,7 @@
 	ipconfig/flushdns
 
 	:: Navigate to the directory you wish to push to GitHub
-	::Change <path> as needed. Eg. C:\Users\rich\Desktop\Writings
+	::修改路径为您需要自动push的路径. Eg. C:\Users\rich\Desktop\Writings
 	cd C:\Users\Administrator\Desktop\zixue
 	
 	::Initialize GitHub
@@ -31,5 +31,5 @@
 	::Change as needed.
 	TIMEOUT 300
 	
-::Restart from the top.	
+::Restart from the top.
 goto loop
