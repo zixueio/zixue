@@ -1,5 +1,9 @@
 :loop
-	
+	:: flushdns	
+	git config --global --unset http.proxy
+	git config --global --unset https.proxy
+	ipconfig/flushdns
+
 	:: Navigate to the directory you wish to push to GitHub
 	::Change <path> as needed. Eg. C:\Users\rich\Desktop\Writings
 	cd C:\Users\Administrator\Desktop\zixue
