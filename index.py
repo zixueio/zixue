@@ -21,7 +21,7 @@ def tranverse_folder(path,d=None,index_file='index.html'):
                 if file_name.endswith('.html'):
                     relative_path=os.path.relpath(os.path.join(root,file_name),os.path.dirname(index_file))
                     with open(index_file,'a') as f:
-                        f.write(f"{relative_path}\n")
+                        f.write(f"<a href='{relative_path}'>{relative_path}</a>")
 
 schedule.every(0.1).minutes.do(job)
 while True:
