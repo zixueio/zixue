@@ -4,6 +4,8 @@ def job():
     tranvese_folder(path)
 def tranvese_folder(path):
     for file in os.listdir(path):
+        if 'venv' in file:
+            file.remove("venv")
         abs_path = os.path.join(path,file)
         if os.path.isdir(abs_path):
             print("dir: ",abs_path)
