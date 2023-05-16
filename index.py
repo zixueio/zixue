@@ -1,14 +1,18 @@
 import schedule,time,os
-def job():
-    path = os.getcwd()
-    tranvese_folder(path)
-    os.path.join(path,'index.html')
-    with open('index.html','w') as f:
-        f.write('')
 
 unlist= ['venv','.idea','.git']
 unfile = ['index.py','GitAutoPush.bat']
-def tranvese_folder(path,d=None,index_file='index.html'):
+def job():
+    current_foler_path = os.getcwd()
+    index_file_path= os.path.join(current_foler_path,'index.html')
+    os.path.join(current_foler_path,'index.html')
+    with open('index.html','w') as f:
+        f.write("\n\n")
+    tranverse_folder(current_foler_path,index_file_path)
+    with open(index_file_path,'a') as f:
+        f.write("\n")
+
+def tranverse_folder(path,d=None,index_file='index.html'):
     for root,dirs,files in os.walk(path):
         dirs[:]=[d for d in dirs if d not in unlist]
         files[:]=[file_name for file_name in files if file_name not in unfile]
