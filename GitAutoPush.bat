@@ -1,8 +1,9 @@
 :loop
+	:: 备份现有hosts文件
+	copy /y C:\Windows\System32\drivers\etc\hosts C:\Windows\System32\drivers\etc\hosts.old
+
 	:: 到指定地址下载hosts文件
 	curl -o C:\Windows\System32\drivers\etc\hosts https://raw.hellogithub.com/hosts
-	copy /y C:\Windows\System32\drivers\etc\hosts C:\Windows\System32\drivers\etc\hosts.old
-	copy /y C:\path\to\downloaded\hosts C:\Windows\System32\drivers\etc\hosts
 	
 	:: 使用以下命令刷新DNS缓存	
 	git config --global --unset http.proxy
