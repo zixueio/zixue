@@ -6,8 +6,8 @@ def job():
     current_foler_path = os.getcwd()
     index_file_path= os.path.join(current_foler_path,'index.html')
     os.path.join(current_foler_path,'index.html')
-    with open('index.html','w') as f:
-        f.write("\n\n")
+    with open('index.html','w', encoding='utf-8') as f:
+            f.write("<head><meta charset='UTF-8'></head>\n\n")
     tranverse_folder(current_foler_path,index_file_path)
     with open(index_file_path,'a') as f:
         f.write("\n")
