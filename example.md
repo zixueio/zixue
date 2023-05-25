@@ -5,11 +5,14 @@
 1. **理解Web应用和HTTP协议**：在你开始学习Flask之前，了解Web应用的工作原理和HTTP协议的基础知识是很有帮助的。
 
 2. **安装Flask**：首先，你需要在你的环境中安装Flask。这可以通过pip来完成：
-```sh
+
+```
+sh
 pip install flask
 ```
 
 3. **创建你的第一个Flask应用**：你可以开始创建一个最基础的Flask应用。这通常包括一个函数（也称为视图函数）和一个路由，该路由告诉Flask当用户访问特定URL时运行哪个函数。这个最简单的Flask应用可能看起来像这样：
+
 ```python
 from flask import Flask
 app = Flask(__name__)
