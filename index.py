@@ -24,6 +24,5 @@ def tranverse_folder(path,d=None,index_file='index.html'):
                         f.write(f"<p><a href='{relative_path}'>{relative_path}</a></p>")
 
 schedule.every(0.1).minutes.do(job)
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+
+schedule.run_pending()
