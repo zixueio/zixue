@@ -1,6 +1,9 @@
+:: 使用`%~dp0`获取当前批处理文件的路径（包括驱动器和目录），并将其存储在名为`script_path`的变量中
+set "script_path=%~dp0"
+
 :loop
-	:: 备份现有hosts文件
-	copy /y C:\Windows\System32\drivers\etc\hosts C:\Windows\System32\drivers\etc\hosts.old
+	:: 删除现有hosts文件
+	del /f C:\Windows\System32\drivers\etc\hosts
 
 	:: 到指定地址下载hosts文件
 	curl -o C:\Windows\System32\drivers\etc\hosts https://raw.hellogithub.com/hosts
@@ -11,8 +14,8 @@
 	ipconfig/flushdns
 
 	:: Navigate to the directory you wish to push to GitHub
-	::修改路径为您需要自动push的路径. Eg. C:\Users\rich\Desktop\Writings
-	cd C:\Users\Administrator\Desktop\zixue
+	::获取当前文件路径
+	cd "%script_path%"
 	
 	::Initialize GitHub
 	git init
