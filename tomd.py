@@ -1,13 +1,26 @@
-import markdown
+from markdown import markdown
+from pygments import highlight
+from pygments. lexers import get_lexer_by_name
+from pygments. formatters import HtmlFormatter
+import re
 
-# 打开Markdown文件并读取内容
-with open('example.md', 'r', encoding='utf-8') as f:
-    text = f.read()
+def convert_md_to_html (md_text):
+# Convert Markdown to HTML
+html = markdown (md_text)
 
+# Find code blocks
+code_blocks = re. findall (r '<pre> <code class = "([^"] *) "> (. *?) </code> </pre> ', html, flags = re. DOTALL)
 
-# 使用markdown库将Markdown转换为HTML
-html = markdown.markdown(text)
+for lang, code in code_blocks:
+# Remove 'language-' prefix from language name
+lang = lang [9:]
 
-# 将HTML写入新的文件
-with open('example.html', 'w',encoding='utf-8') as f:
-    f.write(html)
+# Highlight code
+lexer = get_lexer_by_name (lang, stripall = True)
+formatter = HtmlFormatter ()
+code_highlighted = highlight (code, lexer, formatter)
+
+# Replace original code block with highlighted code
+html = html. replace ('<pre> <code class = "language-{}"> {} </code> </pre>'. format (lang, code), code_highlighted)
+
+return html
