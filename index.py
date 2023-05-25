@@ -1,4 +1,4 @@
-import schedule,time,os
+import schedule,os
 
 unlist= ['venv','.idea','.git']
 unfile = ['index.py','GitAutoPush.bat']
