@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p>以下是一个最简单的回调函数的例子，其中 <code>caller</code> 函数接受一个回调函数作为参数，并在内部调用该函数：</p>
+<pre><code class="language-python">def callee(callback):
+    print(&quot;callee function is called!&quot;)
+    callback()
+
+def callback():
+    print(&quot;callback function is called!&quot;)
+
+callee(callback)
+</code></pre>
+<p>在上面的代码中，<code>callee</code> 函数接受一个函数 <code>callback</code> 作为参数，并在内部调用该函数。<code>callback</code> 函数本身不需要传递任何参数，它只是简单地打印一条消息。</p>
+<p>当 <code>callee</code> 函数被调用时，它首先打印一条消息，然后调用传递给它的回调函数。在此例中，回调函数是 <code>callback</code> 函数，它会被调用并打印另一条消息。</p>
+<p>因此，该程序的输出为：</p>
+<pre><code>callee function is called!
+callback function is called!
+</code></pre></body>
+</html>
