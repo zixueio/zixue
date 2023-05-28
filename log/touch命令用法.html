@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p><code>touch</code>命令在Unix和Linux系统中用于创建空文件或更新已存在文件的访问和修改时间。以下是<code>touch</code>命令的用法：</p>
+<ol>
+<li>
+<p>创建一个新文件：
+   <code>touch filename</code>
+   这将创建一个名为<code>filename</code>的空文件。</p>
+</li>
+<li>
+<p>创建多个新文件：
+   <code>touch file1 file2 file3</code>
+   这将同时创建<code>file1</code>、<code>file2</code>和<code>file3</code>这三个空文件。</p>
+</li>
+<li>
+<p>更新现有文件的访问和修改时间：
+   <code>touch filename</code>
+   这将更新<code>filename</code>文件的访问和修改时间为当前时间。</p>
+</li>
+<li>
+<p>使用自定义时间戳更新文件的访问和修改时间：
+   <code>touch -t YYYYMMDDHHMM.SS filename</code>
+   其中，<code>YYYYMMDDHHMM.SS</code>是指定的时间戳，表示年份（YYYY）、月份（MM）、日期（DD）、小时（HH）、分钟（MM）和秒（SS）。这将更新<code>filename</code>文件的访问和修改时间为指定的时间戳。</p>
+</li>
+<li>
+<p>递归地更新目录中所有文件的访问和修改时间：
+   <code>touch -R directory</code>
+   这将递归地更新<code>directory</code>目录下所有文件的访问和修改时间为当前时间。</p>
+</li>
+</ol>
+<p>这些是<code>touch</code>命令的常见用法示例。它还有其他选项和用法，请参考<code>touch</code>命令的文档或运行<code>man touch</code>命令来获取更详细的信息。</p>
+<p>请注意，上述示例中的命令适用于Unix和Linux系统。如果您使用的是Windows系统，则可以尝试使用<code>type nul &gt; filename</code>命令来创建空文件，而无需使用<code>touch</code>命令。</p></body>
+</html>

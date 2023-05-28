@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p><code>os.path.relpath()</code>函数用于计算两个路径之间的相对路径。它返回从第二个路径到第一个路径的相对路径。</p>
+<p>函数的语法如下：</p>
+<pre><code class="language-python">os.path.relpath(path, start=os.curdir)
+</code></pre>
+<ul>
+<li><code>path</code>：要计算相对路径的目标路径。</li>
+<li><code>start</code>：可选参数，表示起始路径。默认值为当前工作目录（<code>os.curdir</code>）。</li>
+</ul>
+<p><code>os.path.relpath()</code>函数的原理如下：</p>
+<ol>
+<li>首先，函数会将<code>path</code>和<code>start</code>转换为绝对路径。</li>
+<li>然后，它会比较<code>start</code>路径和<code>path</code>路径，找到它们的共同部分。</li>
+<li>接下来，函数会根据共同部分以外的部分，构建出从<code>start</code>到<code>path</code>的相对路径。</li>
+<li>最后，函数返回计算得到的相对路径。</li>
+</ol>
+<p>以下是一些示例来说明<code>os.path.relpath()</code>函数的工作原理：</p>
+<p>示例1：</p>
+<pre><code class="language-python">path = '/a/b/c/d/e'
+start = '/a/b'
+relative_path = os.path.relpath(path, start)
+print(relative_path)  # 输出: c/d/e
+</code></pre>
+<p>在这个示例中，<code>path</code>是<code>/a/b/c/d/e</code>，<code>start</code>是<code>/a/b</code>。计算得到的相对路径是<code>c/d/e</code>，表示从<code>start</code>路径到<code>path</code>路径的相对路径。</p>
+<p>示例2：</p>
+<pre><code class="language-python">path = '/a/b/c/d/e'
+start = '/a/b/c'
+relative_path = os.path.relpath(path, start)
+print(relative_path)  # 输出: ../d/e
+</code></pre>
+<p>在这个示例中，<code>path</code>是<code>/a/b/c/d/e</code>，<code>start</code>是<code>/a/b/c</code>。计算得到的相对路径是<code>../d/e</code>，表示从<code>start</code>路径到<code>path</code>路径的相对路径。</p>
+<p>总结来说，<code>os.path.relpath()</code>函数根据两个路径之间的共同部分，计算得到一个从起始路径到目标路径的相对路径。这样可以方便地表示路径之间的相对位置关系。</p>
+<p>希望这个解释对你有帮助！如果你还有其他问题，请随时提问。</p></body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p><code>os.path.dirname()</code>函数用于返回给定路径的目录部分。它接受一个路径字符串作为参数，并返回该路径的父目录部分。</p>
+<p>函数的语法如下：</p>
+<pre><code class="language-python">os.path.dirname(path)
+</code></pre>
+<ul>
+<li><code>path</code>：要获取父目录的路径字符串。</li>
+</ul>
+<p><code>os.path.dirname()</code>函数的原理如下：</p>
+<ol>
+<li>首先，函数会对输入的路径进行处理，确保它是一个字符串类型。</li>
+<li>然后，函数会根据操作系统特定的路径分隔符（例如，<code>/</code>或<code>\</code>）解析路径，以确定路径中的目录部分。</li>
+<li>接下来，函数会返回路径的目录部分，即父目录。</li>
+</ol>
+<p>以下是一些示例来说明<code>os.path.dirname()</code>函数的工作原理：</p>
+<p>示例1：</p>
+<pre><code class="language-python">path = '/a/b/c/file.txt'
+directory = os.path.dirname(path)
+print(directory)  # 输出: /a/b/c
+</code></pre>
+<p>在这个示例中，<code>os.path.dirname()</code>函数从路径<code>'/a/b/c/file.txt'</code>中提取出父目录部分<code>'/a/b/c'</code>。</p>
+<p>示例2：</p>
+<pre><code class="language-python">path = 'path/to/directory/'
+directory = os.path.dirname(path)
+print(directory)  # 输出: path/to
+</code></pre>
+<p>在这个示例中，<code>os.path.dirname()</code>函数从路径<code>'path/to/directory/'</code>中提取出父目录部分<code>'path/to'</code>。</p>
+<p>总结来说，<code>os.path.dirname()</code>函数根据给定路径返回父目录部分。它解析路径字符串，找到最后一个路径分隔符之前的部分，并返回该部分作为父目录。</p>
+<p>希望这个解释对你有帮助！如果你还有其他问题，请随时提问。</p></body>
+</html>

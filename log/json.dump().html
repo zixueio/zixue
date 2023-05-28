@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p><code>json.dump()</code>是Python标准库中<code>json</code>模块的一个函数，用于将Python对象序列化为JSON格式，并将其写入一个可写的文件对象中。</p>
+<p>具体而言，<code>json.dump()</code>函数接受两个参数：</p>
+<ol>
+<li><code>obj</code>：要序列化为JSON并写入文件的Python对象。</li>
+<li><code>fp</code>：一个可写的文件对象，表示目标文件。</li>
+</ol>
+<p>以下是函数的基本用法示例：</p>
+<pre><code class="language-python">import json
+
+data = {
+    &quot;name&quot;: &quot;John&quot;,
+    &quot;age&quot;: 30,
+    &quot;city&quot;: &quot;New York&quot;
+}
+
+# 打开文件对象并将数据写入JSON格式
+with open(&quot;data.json&quot;, &quot;w&quot;) as fp:
+    json.dump(data, fp)
+</code></pre>
+<p>在上述示例中，我们创建了一个字典对象<code>data</code>，表示某些数据。然后，我们使用<code>json.dump()</code>将该字典对象写入名为<code>data.json</code>的文件中。<code>with</code>语句用于自动管理文件的打开和关闭。</p>
+<p>执行以上代码后，<code>data.json</code>文件将包含序列化后的JSON数据，类似于以下内容：</p>
+<pre><code class="language-json">{&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30, &quot;city&quot;: &quot;New York&quot;}
+</code></pre>
+<p><code>json.dump()</code>函数将Python对象转换为JSON格式，并将其写入文件中。确保文件对象以可写模式打开，否则会引发IOError。</p>
+<p>该函数的作用与<code>json.dumps()</code>函数类似，但是<code>json.dump()</code>直接将JSON数据写入文件，而<code>json.dumps()</code>将数据序列化为字符串。</p></body>
+</html>

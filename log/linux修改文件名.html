@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p>在Linux中，你可以使用<code>mv</code>命令来修改文件名。<code>mv</code>命令既可以用于移动文件，也可以用于重命名文件。</p>
+<p>以下是一些常见的用法示例：</p>
+<ol>
+<li>
+<p><strong>重命名文件</strong>：
+   <code>bash
+   mv old_filename new_filename</code>
+   将<code>old_filename</code>更改为<code>new_filename</code>，两者可以是相对路径或绝对路径。</p>
+</li>
+<li>
+<p><strong>移动文件并重命名</strong>：
+   <code>bash
+   mv old_location/new_filename new_location/</code>
+   将位于<code>old_location</code>的文件移动到<code>new_location</code>目录，并将其重命名为<code>new_filename</code>。</p>
+</li>
+<li>
+<p><strong>批量重命名文件</strong>：
+   <code>bash
+   rename 's/old_pattern/new_pattern/' file_pattern</code>
+   使用<code>rename</code>命令批量重命名符合<code>file_pattern</code>的文件。<code>old_pattern</code>是要被替换的模式，<code>new_pattern</code>是替换后的模式。可以使用正则表达式进行模式匹配和替换。</p>
+</li>
+</ol>
+<p>请注意，在执行文件重命名操作之前，请谨慎确认文件名和目录路径。误操作可能导致文件丢失或被覆盖。</p>
+<p>此外，还有其他更高级的文件批量重命名工具和脚本，例如<code>mmv</code>、<code>renameutils</code>、<code>pyRenamer</code>等，它们提供更多灵活的选项和规则来处理文件重命名任务。</p>
+<p>总之，通过使用<code>mv</code>命令或其他文件批量重命名工具，你可以在Linux中方便地修改文件名和文件位置。</p></body>
+</html>
