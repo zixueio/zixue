@@ -23,6 +23,9 @@ def job():
         f.write("</html>\n")
 
 def traverse_folder(path, d=None, index_file='index.html'):
+
+
+
     for root,dirs,files in os.walk(path):
         dirs[:] = [dir for dir in dirs if dir not in unlist]
         files[:] = [file_name for file_name in files if file_name not in unfile]
@@ -31,6 +34,7 @@ def traverse_folder(path, d=None, index_file='index.html'):
                 if file_name.endswith('.md'):
                     md_path = os.path.join(root,file_name)
                     convert_md_to_html(md_path,file_name)
+
     for root, dirs, files in os.walk(path):
         dirs[:] = [dir for dir in dirs if dir not in unlist]
         files[:] = [file_name for file_name in files if file_name not in unfile]
