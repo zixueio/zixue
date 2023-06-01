@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p>当需要对包含时间信息的对象进行排序时，可以使用<code>sorted()</code>函数并结合<code>key</code>参数来指定排序的依据。下面是一个示例，演示如何按照时间从早到晚对包含时间字符串的列表进行排序：</p>
+<pre><code class="language-python">from datetime import datetime
+
+timestamps = [
+    &quot;2023-05-28 09:30:00&quot;,
+    &quot;2023-05-29 14:45:00&quot;,
+    &quot;2023-05-27 12:00:00&quot;,
+    &quot;2023-05-30 08:15:00&quot;
+]
+
+sorted_timestamps = sorted(timestamps, key=lambda x: datetime.strptime(x, &quot;%Y-%m-%d %H:%M:%S&quot;))
+
+for timestamp in sorted_timestamps:
+    print(timestamp)
+</code></pre>
+<p>输出结果：</p>
+<pre><code>2023-05-27 12:00:00
+2023-05-28 09:30:00
+2023-05-29 14:45:00
+2023-05-30 08:15:00
+</code></pre>
+<p>在这个例子中，我们有一个包含时间字符串的列表 <code>timestamps</code>。通过使用<code>sorted()</code>函数和<code>key</code>参数，我们将时间字符串转换为<code>datetime</code>对象，并以此作为排序的依据。lambda函数<code>lambda x: datetime.strptime(x, "%Y-%m-%d %H:%M:%S")</code>将每个时间字符串<code>x</code>转换为对应的<code>datetime</code>对象。</p>
+<p>最后，我们按照从早到晚的顺序打印输出了排序后的时间字符串列表<code>sorted_timestamps</code>。</p>
+<p>需要注意的是，上述代码假设时间字符串的格式为<code>"%Y-%m-%d %H:%M:%S"</code>，如果实际情况中的时间格式不同，需要根据实际情况进行相应的调整。</p></body>
+</html>
