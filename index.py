@@ -2,7 +2,7 @@ import os
 from convert_md_to_html import convert_md_to_html
 
 unlist= ['venv','.idea','.git']
-unfile = ['index.py','GitAutoPush.bat']
+unfile = ['index.py','GitAutoPush.bat','Markdown Editor.html']
 
 def job():
     current_folder_path = os.getcwd()
