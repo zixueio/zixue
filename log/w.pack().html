@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p>在Tkinter中，<code>pack()</code>函数是用来管理（或说“打包”）窗口部件的几何布局的。Tkinter有几种不同的布局管理器，包括<code>pack</code>、<code>grid</code>和<code>place</code>。这些方法被用来组织和管理窗口部件在窗口中的位置。</p>
+<p><code>pack()</code>方法是最简单的布局管理器之一。它将窗口部件按照它们被声明的顺序打包到窗口中，并默认填充整个可用空间。你可以通过参数来改变默认的行为。例如：</p>
+<pre><code class="language-python">w.pack(side='left')
+</code></pre>
+<p>这将会把<code>w</code>部件放置在其父部件的左边。而以下代码：</p>
+<pre><code class="language-python">w.pack(fill='both', expand=True)
+</code></pre>
+<p>将会使<code>w</code>部件填充其父部件的整个空间，并且当父部件大小变化时，<code>w</code>部件的大小也会跟着变化。</p>
+<p>虽然<code>pack()</code>方法对于简单的布局来说很方便，但是对于更复杂的布局，你可能需要使用<code>grid()</code>或<code>place()</code>方法。</p></body>
+</html>
