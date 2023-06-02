@@ -1,9 +1,12 @@
+Èç¹ûÄãÏëÒª±£´æµÄÎÄ¼ş¾ßÓĞ`.md`À©Õ¹Ãû£¬Äã¿ÉÒÔÔÚ±£´æÎÄ¼şÊ±Ìí¼ÓÀ©Õ¹Ãû¡£ÒÔÏÂÊÇĞŞ¸ÄºóµÄ´úÂë£º
+
+```python
 import tkinter as tk
 import os
 
 def save_text():
     filename = filename_entry.get()
-    text = text_entry.get("1.0", "end-1c")  # è·å–æ–‡æœ¬æ¡†ä¸­çš„å†…å®¹
+    text = text_entry.get("1.0", "end-1c")  # »ñÈ¡ÎÄ±¾¿òÖĞµÄÄÚÈİ
     with open(os.path.join("log", filename + ".md"), 'w') as f:
         f.write(text)
 
@@ -22,3 +25,8 @@ text_entry.grid(row=1, column=1)
 tk.Button(root, text='Save', command=save_text).grid(row=2, column=1, sticky=tk.W, pady=4)
 
 root.mainloop()
+```
+
+ÔÚÕâ¸ö°æ±¾µÄ´úÂëÖĞ£¬`save_text`º¯Êı½«`.md`À©Õ¹ÃûÌí¼Óµ½ÁËÎÄ¼şÃûºóÃæ£¬ËùÒÔ±£´æµÄÎÄ¼ş½«ÊÇMarkdownÎÄ¼ş¡£
+
+¼Ç×¡£¬ÄãÈÔÈ»ĞèÒªÈ·±£ÔËĞĞ³ÌĞòµÄµ±Ç°Ä¿Â¼ÏÂ´æÔÚÒ»¸öÃûÎª"log"µÄÎÄ¼ş¼Ğ¡£Èç¹û²»´æÔÚ£¬ĞèÒªÊÖ¶¯´´½¨£¬»òÕßÔÚ´úÂëÖĞÌí¼Ó´´½¨ÎÄ¼ş¼ĞµÄÂß¼­¡£
