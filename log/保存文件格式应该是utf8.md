@@ -1,6 +1,8 @@
+看起来你可能在输入文件名时误输入了换行符 `\n`，这可能是因为你在文件名输入框中按了"Enter"键。此外，你可能需要确保 "log" 文件夹存在于你的当前工作目录下。以下是更新后的代码，它将删除文件名中可能存在的换行符，并确保 "log" 文件夹存在：
+
+```python
 import tkinter as tk
 import os
-import index
 
 def save_text():
     filename = filename_entry.get().strip()  # 去掉可能的换行符或空格
@@ -26,5 +28,6 @@ text_entry.grid(row=1, column=1)
 tk.Button(root, text='Save', command=save_text).grid(row=2, column=1, sticky=tk.W, pady=4)
 
 root.mainloop()
+```
 
-index.job()
+在上述代码中，我添加了 `.strip()` 方法来移除文件名两侧可能存在的空白字符（包括换行符）。另外，我添加了检查 "log" 文件夹是否存在的代码，如果不存在则会创建该文件夹。
