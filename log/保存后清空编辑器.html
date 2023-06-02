@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p>要清空文本编辑器，你可以使用<code>Text</code>组件的<code>delete</code>方法。以下是如何在你的代码中做到这一点的例子：</p>
+<pre><code class="language-python">import tkinter as tk
+import os
+import index  # 引入index库
+
+def save_text():
+    filename = filename_entry.get().strip()  # 去掉可能的换行符或空格
+    text = text_entry.get(&quot;1.0&quot;, &quot;end-1c&quot;)  # 获取文本框中的内容
+    directory = &quot;log&quot;
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    with open(os.path.join(directory, filename + &quot;.md&quot;), 'w', encoding='utf-8') as f:
+        f.write(text)
+
+    index.job()  # 调用index库中的job函数
+
+    text_entry.delete(&quot;1.0&quot;, &quot;end&quot;)  # 清空文本编辑器
+
+root = tk.Tk()
+root.title(&quot;Markdown Editor&quot;)
+
+tk.Label(root, text=&quot;File Name&quot;).grid(row=0)
+tk.Label(root, text=&quot;Text&quot;).grid(row=1)
+
+filename_entry = tk.Entry(root)
+text_entry = tk.Text(root)
+
+filename_entry.grid(row=0, column=1)
+text_entry.grid(row=1, column=1)
+
+tk.Button(root, text='Save', command=save_text).grid(row=2, column=1, sticky=tk.W, pady=4)
+
+root.mainloop()
+</code></pre>
+<p>在这个代码中，我在<code>save_text</code>函数的最后添加了<code>text_entry.delete("1.0", "end")</code>，这会清空文本编辑器。<code>"1.0"</code>表示文本的开始位置，<code>"end"</code>表示文本的结束位置，所以<code>text_entry.delete("1.0", "end")</code>的意思是删除文本编辑器中的所有文本。</p></body>
+</html>

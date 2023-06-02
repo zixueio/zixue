@@ -6,7 +6,7 @@ set "script_path=%~dp0"
 	echo Complete. Generating index.html...
 
 	:: Run the index.py script to generate index.html
-	python "%script_path%index.py"
+	:: python "%script_path%index.py"
 
 	:: 删除现有hosts文件
 	del /f C:\Windows\System32\drivers\etc\hosts

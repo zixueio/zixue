@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p>使用<code>Text</code>部件来替代<code>Entry</code>部件的确可以解决你的问题。<code>Text</code>部件支持多行文本输入，并且可以根据内容的多少自动调整大小。以下是如何修改你的代码来实现这个效果的例子：</p>
+<pre><code class="language-python">import tkinter as tk
+import os
+import index  # 引入index库
+
+def save_text():
+    filename = filename_entry.get(&quot;1.0&quot;, &quot;end-1c&quot;).strip()  # 修改这里，从Text部件获取文本
+    text = text_entry.get(&quot;1.0&quot;, &quot;end-1c&quot;)
+    directory = &quot;log&quot;
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    with open(os.path.join(directory, filename + &quot;.md&quot;), 'w', encoding='utf-8') as f:
+        f.write(text)
+
+    index.job()  # 调用index库中的job函数
+
+    text_entry.delete(&quot;1.0&quot;, &quot;end&quot;)  # 清空文本编辑器
+    filename_entry.delete(&quot;1.0&quot;, &quot;end&quot;)  # 清空文件名输入框
+
+root = tk.Tk()
+root.title(&quot;Markdown Editor&quot;)
+
+tk.Label(root, text=&quot;File Name&quot;).grid(row=0)
+tk.Label(root, text=&quot;Text&quot;).grid(row=1)
+
+filename_entry = tk.Text(root, height=1)  # 修改这里，使用Text部件代替Entry部件
+text_entry = tk.Text(root)
+
+filename_entry.grid(row=0, column=1)
+text_entry.grid(row=1, column=1)
+
+tk.Button(root, text='Save', command=save_text).grid(row=2, column=1, sticky=tk.W, pady=4)
+
+root.mainloop()
+</code></pre>
+<p>在这个代码中，我将<code>filename_entry</code>部件从<code>Entry</code>部件改为<code>Text</code>部件，并且设置<code>height=1</code>以使它在没有文本时的高度和<code>Entry</code>部件相似。另外，我还修改了<code>save_text</code>函数，以使它可以从<code>Text</code>部件获取文件名。</p>
+<p>然而，请注意，由于<code>Text</code>部件支持多行文本输入，用户可能会输入包含换行符的文件名，这可能会导致问题。你可能需要添加一些代码来处理这个问题，例如，通过使用<code>filename.replace('\n', '')</code>来删除文件名中的所有换行符。</p></body>
+</html>

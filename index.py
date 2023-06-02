@@ -24,8 +24,6 @@ def job():
 
 def traverse_folder(path, d=None, index_file='index.html'):
 
-
-
     for root,dirs,files in os.walk(path):
         dirs[:] = [dir for dir in dirs if dir not in unlist]
         files[:] = [file_name for file_name in files if file_name not in unfile]
@@ -44,5 +42,3 @@ def traverse_folder(path, d=None, index_file='index.html'):
                     relative_path = os.path.relpath(os.path.join(root, file_name), os.path.dirname(index_file))
                     with open(index_file, 'a', encoding='utf-8') as f:
                         f.write(f"<p><a href='{relative_path}'>{relative_path}</a></p>\n")
-
-job()

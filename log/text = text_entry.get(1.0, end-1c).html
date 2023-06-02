@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+</head>
+<body>
+
+<p>在Tkinter中，<code>Text</code>组件的<code>get</code>方法是用来获取<code>Text</code>组件中的文本内容的。这个方法需要两个参数，分别是文本的开始位置和结束位置。</p>
+<p>在你提到的代码<code>text_entry.get("1.0", "end-1c")</code>中：</p>
+<ul>
+<li><code>"1.0"</code>表示第一行第零个字符，也就是文本的开始位置。</li>
+<li><code>"end-1c"</code>表示从文本的结束位置回退一个字符。<code>"end"</code>表示文本的结束位置，<code>"-1c"</code>表示回退一个字符。</li>
+</ul>
+<p>这样做的目的是因为Tkinter的<code>Text</code>组件会在文本的最后添加一个新行符，使用<code>"end-1c"</code>可以去除这个新行符。所以<code>text_entry.get("1.0", "end-1c")</code>的意思是获取<code>Text</code>组件中的所有文本，但是去除末尾的新行符。</p></body>
+</html>
