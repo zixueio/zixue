@@ -4,7 +4,7 @@ import os
 def save_text():
     filename = filename_entry.get()
     text = text_entry.get("1.0", "end-1c")  # 获取文本框中的内容
-    with open(os.path.join("log", filename + ".md"), 'w') as f:
+    with open(os.path.join("log", filename + ".md"), 'w', encoding='utf-8') as f:
         f.write(text)
 
 root = tk.Tk()
